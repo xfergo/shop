@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мій Магазин</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; max-width: 800px; margin: 0 auto; }
+        .section { border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; border-radius: 5px; }
+        .product-item { border-bottom: 1px solid #eee; padding: 10px 0; display: flex; justify-content: space-between; align-items: center; }
+        .product-item:last-child { border-bottom: none; }
+        button { cursor: pointer; padding: 5px 10px; margin-top: 5px; background-color: #007bff; color: white; border: none; border-radius: 3px; }
+        button:hover { background-color: #0056b3; }
+        .btn-danger { background-color: #dc3545; }
+        .btn-danger:hover { background-color: #bd2130; }
+        .btn-secondary { background-color: #6c757d; }
+        .btn-secondary:hover { background-color: #545b62; }
+        #auth-status { color: #28a745; font-weight: bold; margin-bottom: 15px; padding: 10px; border-radius: 3px; background-color: #e8f5e9; display: none; }
+        #auth-status.unauthorized { color: #dc3545; background-color: #fde8e8; display: block; }
+        input { padding: 5px; margin-right: 5px; }
+    </style>
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <h1>Магазин (SPA)</h1>
+
+    <div id="auth-status" class="unauthorized">Ви не авторизовані</div>
+
+    <div class="section" id="login-section">
+        <h2>Аутентифікація</h2>
+        <form id="login-form">
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Пароль" required>
+            <button type="submit">Увійти</button>
+        </form>
+    </div>
+
+    <div class="section">
+        <h2>Список Товарів</h2>
+        <button class="btn-secondary" onclick="loadProducts()">Оновити товари</button>
+        <div id="products-container">
+            </div>
+    </div>
+
+    <div class="section">
+        <h2>Моя Корзина</h2>
+        <button class="btn-secondary" onclick="loadCart()">Оновити корзину</button>
+        <div id="cart-container">
+            </div>
+    </div>
+
+</body>
+</html>

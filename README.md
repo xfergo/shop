@@ -1,4 +1,3 @@
-[Celery](celery/README.md)  
-[RESTful shop backend](rest/README.md)  
-[Security](security/README.md)  
-[Shop](shop/README.md)  
+redis: docker compose up  
+backend: uv run uvicorn main:app --reload 
+frontend: uv run python -m http.server 8080

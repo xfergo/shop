@@ -26,3 +26,6 @@ async def get_cart_items(customer_id, session: AsyncSession):
         .options(joinedload(CartItem.product))
     )
     return (await session.execute(stmt)).scalars().all()
+
+async def is_customer_exist(email: str, session: AsyncSession):
+    stmt = ()

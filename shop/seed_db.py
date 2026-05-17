@@ -23,10 +23,6 @@ async def seed_db():
         products = [Product(name=product[0], price=product[1]) for product in PRODUCTS]
         session.add_all(products)
 
-        # --- Customers ---
-        alice = Customer(email="alice@example.com", password=hash_passwd(""))
-        bob = Customer(email="bob@example.com", password=hash_passwd("1"))
-        session.add_all([alice, bob])
 
         await session.commit()
 

@@ -23,12 +23,14 @@ class ProductResponse(BaseModel):
 class CustomerCreate(BaseModel):
     name: str
     email: str
+    password: str
 
 
 class CustomerResponse(BaseModel):
     id: int
     name: str
     email: str
+    password: str
     model_config = {"from_attributes": True}
 
 
@@ -66,4 +68,4 @@ class CartItem(BaseModel):
 
 class Cart(BaseModel):
     cart_items: list[CartItem]
-    total_price: Currency
+    #total_price: Currency

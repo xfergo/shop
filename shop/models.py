@@ -25,6 +25,7 @@ class Customer(Base):
     __tablename__ = "customers"
 
     id: Mapped[int] = mapped_column(primary_key=True)
+    name: Mapped[str] = mapped_column(nullable=False)
     email: Mapped[str] = mapped_column(nullable=False, unique=True)
     password: Mapped[bytes] = mapped_column(LargeBinary(128), nullable=False)
     orders: Mapped[list["Order"]] = relationship(back_populates="customer")
